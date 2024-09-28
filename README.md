@@ -54,11 +54,63 @@ Liste die Werkzeuge und Maschinen auf, die für den Bau des Projekts verwendet w
 - Lötstation
 - Schraubendreher
 
+> [ ] **TODO**: Füge eine vollständige Liste der Werkzeuge und Maschinen hinzu, die du verwendet hast (z.B. Multimeter, Zangen, usw.).
+
 ## Project Description
-Beschreibe das Projekt im Detail. Erläutere die Funktionsweise, die Logik und die Abläufe. Füge auch Schaltpläne oder Diagramme bei, falls erforderlich.
+
+Mit den Anforderungen im Hinterkopf habe ich die benötigten Teile gekauft. Einen ESP32 für den Sensor und einen für das Display. Bevor ich anfangen konnte, sind jedoch noch einige Vorarbeiten nötig gewesen. 
+
+> [ ] **TODO**: Füge ein Bild des Projekts nach dem Zusammenbau hinzu.
+
+### Lötarbeiten:
+Als erstes habe ich das Display und das dazugelieferte Interface zusammengelötet. Das war das erste Mal, dass ich etwas zusammengelötet habe. Wichtig ist hier, dass man die Pins nicht miteinander verbindet. Leider ist das keine gute Methode, um beim Löten Zeit zu sparen, wie ich am Anfang dachte – es entsteht ein Kurzschluss.
+
+> [ ] **TODO**: Füge detaillierte Lötanleitungen oder Links zu Tutorials für Anfänger hinzu.
+
+### Entwicklungsumgebung:
+Mit der Extension PlatformIO IDE habe ich dann ein neues Projekt gestartet.
+
+<img src="https://github.com/user-attachments/assets/5212c9b2-bfbe-4dda-b172-903561b6971d" width="300"/>  
+
+Wie im Screenshot habe ich die folgenden Einstellungen gewählt:
+
+> [ ] **TODO**: Erkläre die genauen Einstellungen in der Entwicklungsumgebung (z.B. Board, Baudrate, Bibliotheken).
+
+### Verkabelung:
+Dann habe ich die Komponenten erstellt. Sensor und Display müssen wie folgt verkabelt werden:
+
+> [ ] **TODO**: Füge eine detaillierte Anleitung zur Verkabelung des ESP32-Boards hinzu (inkl. Pinbelegung).
+
+#### Der Sensor:
+- **Verkabelung**:  
+  ![Sensor Verkabelung](image_link)
+  
+  Der Sensor wird wie folgt angeschlossen:
+  
+  > [ ] **TODO**: Beschreibe die Anschlüsse des Sensors im Detail und erkläre, wie der Sensor funktioniert.
+
+#### Das Display:
+- **Verkabelung**:  
+  ![Display Verkabelung](image_link)
+
+  Das Display wird wie folgt angeschlossen:
+
+> [ ] **TODO**: Erkläre, wie das I2C-Protokoll funktioniert und wie es mit dem ESP32 verbunden wird.
+
+### Endmontage:
+- **Zisterne**:  
+  ![Bild der Installation in der Zisterne](image_link)
+
+- **Küchentisch**:  
+  ![Bild der Installation auf dem Küchentisch](image_link)
+
+> [ ] **TODO**: Füge Bilder der fertigen Installation in der Zisterne und auf dem Küchentisch hinzu.
+
+## Methodenvalidierung
+
+> [ ] **TODO**: Beschreibe, wie du die Funktionsweise des Sensors und der Anzeige überprüft und validiert hast (z.B. Testläufe, Fehlertests).
 
 ## Code
-Füge hier den Code ein, der im Projekt verwendet wird. Alternativ kannst du auf eine externe Datei oder ein Repository verlinken.
 
 ```cpp
 // Beispielcode
@@ -74,3 +126,12 @@ void loop() {
   digitalWrite(LED_BUILTIN, LOW);
   delay(1000);
 }
+
+
+### Zusätzliche TODOs:
+1. **Füge mehr Erklärungen** zur Funktionsweise der einzelnen Komponenten (Sensor, Display, ESP32) hinzu.
+2. **Verkabelungsdiagramme**: Ein Fritzing-Diagramm für die Verkabelung kann hilfreich sein.
+3. **Bibliotheken und Abhängigkeiten**: Liste alle notwendigen Arduino/PlatformIO-Bibliotheken auf, die du für das Projekt benötigt hast.
+4. **Testberichte und Ergebnisse**: Füge einen Abschnitt hinzu, in dem du Testläufe und Ergebnisse dokumentierst.
+
+Mit diesen TODOs hast du eine klare Übersicht über die noch anstehenden Aufgaben, um die README zu vervollständigen.
