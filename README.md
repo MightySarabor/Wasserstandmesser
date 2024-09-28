@@ -36,7 +36,6 @@ Liste die Teammitglieder auf, die an diesem Projekt gearbeitet haben. Erwähne e
 Liste die Werkzeuge und Maschinen auf, die für den Bau des Projekts verwendet wurden. Zum Beispiel:
 - Lötstation
 - Schraubendreher
-- 3D-Drucker
 
 ## Project Description
 Beschreibe das Projekt im Detail. Erläutere die Funktionsweise, die Logik und die Abläufe. Füge auch Schaltpläne oder Diagramme bei, falls erforderlich.
