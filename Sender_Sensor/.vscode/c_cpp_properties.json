@@ -8,8 +8,8 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "C:/Users/flesc/Documents/PlatformIO/Projects/Echo_test/include",
-                "C:/Users/flesc/Documents/PlatformIO/Projects/Echo_test/src",
+                "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Sender_Sensor/include",
+                "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Sender_Sensor/src",
                 "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
                 "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include",
                 "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include",
@@ -207,7 +207,7 @@
                 "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/qio_qspi/include",
                 "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/cores/esp32",
                 "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/variants/uPesy_esp32_wroom_devkit",
-                "C:/Users/flesc/Documents/PlatformIO/Projects/Echo_test/.pio/libdeps/upesy_wroom/Unity/src",
+                "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Sender_Sensor/.pio/libdeps/upesy_wroom/Unity/src",
                 "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src",
                 "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src",
                 "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src",
@@ -245,8 +245,8 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "C:/Users/flesc/Documents/PlatformIO/Projects/Echo_test/include",
-                    "C:/Users/flesc/Documents/PlatformIO/Projects/Echo_test/src",
+                    "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Sender_Sensor/include",
+                    "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Sender_Sensor/src",
                     "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
                     "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include",
                     "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include",
@@ -444,7 +444,7 @@
                     "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/qio_qspi/include",
                     "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/cores/esp32",
                     "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/variants/uPesy_esp32_wroom_devkit",
-                    "C:/Users/flesc/Documents/PlatformIO/Projects/Echo_test/.pio/libdeps/upesy_wroom/Unity/src",
+                    "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Sender_Sensor/.pio/libdeps/upesy_wroom/Unity/src",
                     "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src",
                     "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src",
                     "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src",
