@@ -1,10 +1,27 @@
 # Arduino Project: Dein Projekttitel
 
 ## Intro
-Beschreibe hier kurz das Projekt und den Zweck. Erkläre, was du mit diesem Projekt erreichen möchtest.
 
-## The Team
-Liste die Teammitglieder auf, die an diesem Projekt gearbeitet haben. Erwähne eventuell ihre Rollen oder Aufgabenbereiche.
+Das Ziel dieses Projekts war es, einen **Wasserstandsmesser** für die Zisterne meiner Eltern zu entwickeln. Bisher mussten wir den Wasserstand manuell mit einem Zollstock messen – ein umständlicher und zeitaufwändiger Prozess. Mit diesem Projekt soll der Vorgang stark vereinfacht werden, sodass wir den Wasserstand zukünftig bequem von einem Display ablesen können.
+
+### Anforderungen an das Projekt:
+1. **Komfort**:  
+   Das Display soll sich nicht am Sensor selbst befinden, da wir ansonsten weiterhin fast den gesamten bisherigen Prozess durchlaufen müssten. Stattdessen wird es an einem Ort aufgestellt, der im Alltag leicht zugänglich ist, wie z.B. auf dem Küchentisch.
+
+2. **Zuverlässigkeit**:  
+   Die Messungen müssen zuverlässig sein, da wir sonst weiterhin den Wasserstand manuell prüfen müssten – was den Vorteil des Projekts zunichtemachen würde.
+
+3. **Wartungsarm**:  
+   Der Wasserstandsmesser sollte über längere Zeiträume hinweg ohne Eingriff funktionieren. Es soll also keine neue, regelmäßige Arbeit entstehen, wie z.B. häufige Wartung oder Kalibrierung.
+
+### Technische Umsetzung:
+- **Sensor und Mikrocontroller**:  
+   Der Ultraschallsensor, der speziell für feuchte Umgebungen geeignet ist, wird in der Zisterne platziert. Er erfasst den Wasserstand und überträgt die Daten drahtlos an einen zweiten Mikrocontroller, der sich z.B. im Haus auf dem Küchentisch befindet.
+   
+- **Energieversorgung**:  
+   Der Sensor wird mit wiederaufladbaren Batterien betrieben. Dank des Deep-Sleep-Modus des ESP32-Chips sollte die Batterie eine Laufzeit von 3 bis 6 Monaten haben, bevor sie wieder aufgeladen werden muss.
+
+Mit dieser Lösung gehört das manuelle Messen des Wasserstandes der Vergangenheit an. Der Gang in den Garten dient künftig nur noch der Entspannung!
 
 ## Components and Supplies
 
