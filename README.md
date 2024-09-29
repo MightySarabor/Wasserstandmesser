@@ -25,6 +25,8 @@ Mit dieser Lösung gehört das manuelle Messen des Wasserstandes der Vergangenhe
 
 ## Components and Supplies
 
+### Verbindungen des I2C-LCD-Displays mit dem ESP32
+
 - **esp32 WROOM32** (x2)  
   <img src="https://m.media-amazon.com/images/I/71BY6XjW4yL._AC_SL1500_.jpg" width="200" />  
   [ESP32 WROOM32 kaufen](https://www.amazon.de/esp32-wroom/s?k=esp32+wroom)
