@@ -62,7 +62,7 @@ Mit den Anforderungen im Hinterkopf habe ich die benötigten Teile gekauft. Eine
 
 > [ ] **TODO**: Füge ein Bild des Projekts nach dem Zusammenbau hinzu.
 
-### Lötarbeiten:
+### Lötarbeiten
 Als erstes habe ich das Display und das dazugelieferte Interface zusammengelötet. Das war das erste Mal, dass ich etwas zusammengelötet habe. Wichtig ist hier, dass man die Pins nicht miteinander verbindet. Leider ist das keine gute Methode, um beim Löten Zeit zu sparen, wie ich am Anfang dachte – es entsteht ein Kurzschluss.
 
 ![2ee921cd-962c-41db-8a32-675963d8e4d1](https://github.com/user-attachments/assets/3331cd9d-84c1-4eb7-94a6-7dd5d7e49625)
@@ -71,11 +71,12 @@ Zusätzlich habe ich einen 300 kΩ Widerstand an die R19 Pins meines AJ-SR04M Se
 
 Ein wichtiger Punkt ist, dass in diesem Modus das Trigger-Signal nicht nur 10 Mikrosekunden lang sein sollte, sondern mindestens 1 Millisekunde dauern muss, um eine Messung auszulösen.
 
-### Verkabelung:
+### Verkabelung
 Dann habe ich die Komponenten erstellt. Sensor und Display müssen wie in den Tabellen beschrieben verkabelt werden. Danach sind die Geräte direkt betriebsbereit.
 
-#### Der Sensor:
-- **Verkabelung**:  
+#### Der Sensor
+Der Sensor wird wie folgt angeschlossen:
+
   
 | **AJ-SR04M** | **ESP32 Pin**  | 
 |--------------------|----------------|
@@ -86,8 +87,8 @@ Dann habe ich die Komponenten erstellt. Sensor und Display müssen wie in den Ta
 
 <img src="https://github.com/user-attachments/assets/162fb203-1b52-4b58-a295-8b85bc301caf" width="300"/>
 
-#### Das Display:
-- **Verkabelung**:  
+#### Das Display
+
 Das Display wird wie folgt angeschlossen:
 
 Ein Hinweis bei dem Display: Es gibt eine Stellschraube beim Displayinterface. Damit kann der Kontrast eingestellt werden. Hier einfach ausprobieren, was am besten aussieht.
