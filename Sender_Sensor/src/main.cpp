@@ -1,100 +1,99 @@
 #include <esp_now.h>
 #include <WiFi.h>
+#include <esp_sleep.h>
 
-// Definiere die Pins für den HC-SR04
-#define TRIG_PIN 5  // Pin für den Trigger
-#define ECHO_PIN 18 // Pin für das Echo
+#define TRIG_PIN 5
+#define ECHO_PIN 18
 
-// MAC-Adresse von Board 2: ac:15:18:ea:9e:08
-uint8_t broadcastAddress[] = {0xAC, 0x15, 0x18, 0xEA, 0x9E, 0x08};
+uint8_t receiverAddress[] = {0xAC, 0x15, 0x18, 0xEA, 0x9E, 0x08};
 
-// Struktur zur Übermittlung der Sensordaten
-typedef struct test_struct {
-  float distance; // Entfernungswert
-} test_struct;
+typedef struct SensorData {
+  float distance;
+} SensorData;
 
-test_struct test;
-
+SensorData sensorData;
 esp_now_peer_info_t peerInfo;
+bool dataSent = false;  // Flag zum Prüfen, ob Daten erfolgreich gesendet wurden
+int sendAttempts = 0;   // Anzahl der Sendeversuche
+const int maxAttempts = 3; // Maximale Anzahl der Sendeversuche
 
-// Callback, wenn Daten gesendet wurden
+// Callback für gesendete Daten
 void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status) {
-  char macStr[18];
-  Serial.print("Packet to: ");
-  // Kopiere die MAC-Adresse des Empfängers in einen String
-  snprintf(macStr, sizeof(macStr), "%02x:%02x:%02x:%02x:%02x:%02x",
-           mac_addr[0], mac_addr[1], mac_addr[2], mac_addr[3], mac_addr[4], mac_addr[5]);
-  Serial.print(macStr);
-  Serial.print(" send status:\t");
-  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Delivery Success" : "Delivery Fail");
+  Serial.print("Send attempt ");
+  Serial.print(sendAttempts);
+  Serial.print(": ");
+  Serial.println(status == ESP_NOW_SEND_SUCCESS ? "Success" : "Fail");
+
+  if (status == ESP_NOW_SEND_SUCCESS) {
+    dataSent = true;  // Wenn erfolgreich, setze das Flag auf true
+  } else {
+    sendAttempts++;   // Erhöhe die Sendeversuchsanzahl bei einem Fehlschlag
+  }
 }
 
-// Funktion zur Messung der Entfernung mit dem HC-SR04
+// Entfernungsmessung mit HC-SR04
 float getDistance() {
-  // Trigger-Impuls auslösen
   digitalWrite(TRIG_PIN, LOW);
   delayMicroseconds(2);
   digitalWrite(TRIG_PIN, HIGH);
   delayMicroseconds(10);
   digitalWrite(TRIG_PIN, LOW);
-
-  // Dauer des Echo-Signals messen
   long duration = pulseIn(ECHO_PIN, HIGH);
+  return (duration * 0.034) / 2;
+}
 
-  // Berechne die Entfernung basierend auf der Zeit (Schallgeschwindigkeit = 0,034 cm/µs)
-  float distance = (duration * 0.034) / 2;
+// Daten über ESP-NOW senden
+void sendData() {
+  sensorData.distance = getDistance();
+  Serial.print("Measured Distance: ");
+  Serial.println(sensorData.distance);
 
-  return distance;
+  esp_now_send(receiverAddress, (uint8_t *) &sensorData, sizeof(sensorData));
 }
 
 void setup() {
-  // Initialisiere den seriellen Monitor
   Serial.begin(115200);
-
-  // Pins für den HC-SR04 initialisieren
   pinMode(TRIG_PIN, OUTPUT);
   pinMode(ECHO_PIN, INPUT);
- 
-  // Setze das ESP32 als Wi-Fi-Station
+
   WiFi.mode(WIFI_STA);
- 
-  // Initialisiere ESP-NOW
+
   if (esp_now_init() != ESP_OK) {
-    Serial.println("Error initializing ESP-NOW");
+    Serial.println("ESP-NOW init failed");
     return;
   }
-  
-  // Registriere die Callback-Funktion für das Senden
+
   esp_now_register_send_cb(OnDataSent);
-   
-  // Peer registrieren
-  peerInfo.channel = 0;  
+
+  
+  memcpy(peerInfo.peer_addr, receiverAddress, 6);
+  peerInfo.channel = 0;
   peerInfo.encrypt = false;
-  memcpy(peerInfo.peer_addr, broadcastAddress, 6); // Setze die MAC-Adresse von Board 2 ein
-  if (esp_now_add_peer(&peerInfo) != ESP_OK){
+
+  if (esp_now_add_peer(&peerInfo) != ESP_OK) {
     Serial.println("Failed to add peer");
     return;
   }
+
+  sendData();  // Erster Sendeversuch
 }
 
 void loop() {
-  // Entfernung mit dem HC-SR04 messen
-  test.distance = getDistance();
-  
-  // Ausgabe der Entfernung auf dem seriellen Monitor
-  Serial.print("Measured Distance: ");
-  Serial.print(test.distance);
-  Serial.println(" cm");
- 
-  // Sende die Daten über ESP-NOW
-  esp_err_t result = esp_now_send(broadcastAddress, (uint8_t *) &test, sizeof(test_struct));
-   
-  if (result == ESP_OK) {
-    Serial.print("Sent with success. Distance: ");
-    Serial.println(test.distance);
-  } else {
-    Serial.println("Error sending the data");
+  // Prüfe, ob die Daten erfolgreich gesendet wurden oder ob die maximale Anzahl an Versuchen erreicht ist
+  if (dataSent || sendAttempts >= maxAttempts) {
+    if (dataSent) {
+      Serial.println("Data sent successfully. Going to sleep...");
+    } else {
+      Serial.println("Max attempts reached. Going to sleep...");
+    }
+    // Gehe in den Deep Sleep Modus für 24 Stunden
+    esp_sleep_enable_timer_wakeup(86400000000); // 24 Stunden in Mikrosekunden
+    esp_deep_sleep_start();
+  } else if (sendAttempts > 0) {
+    // Wenn der erste Versuch fehlgeschlagen ist, versuche es erneut
+    Serial.print("Retrying to send data (Attempt ");
+    Serial.print(sendAttempts + 1);
+    Serial.println(")...");
+    sendData();
   }
-  
-  delay(2000); // Warte 2 Sekunden vor dem nächsten Senden
 }

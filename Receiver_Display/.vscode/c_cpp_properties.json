@@ -8,10 +8,10 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Display/include",
-                "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Display/src",
+                "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Receiver_Display/include",
+                "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Receiver_Display/src",
                 "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
-                "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Display/.pio/libdeps/upesy_wroom/LiquidCrystal_I2C",
+                "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Receiver_Display/.pio/libdeps/upesy_wroom/LiquidCrystal_I2C",
                 "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
                 "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include",
                 "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include",
@@ -245,10 +245,10 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Display/include",
-                    "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Display/src",
+                    "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Receiver_Display/include",
+                    "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Receiver_Display/src",
                     "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
-                    "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Display/.pio/libdeps/upesy_wroom/LiquidCrystal_I2C",
+                    "C:/Users/flesc/Documents/PlatformIO/Projects/Wasserstandmesser/Receiver_Display/.pio/libdeps/upesy_wroom/LiquidCrystal_I2C",
                     "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
                     "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include",
                     "C:/Users/flesc/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include",

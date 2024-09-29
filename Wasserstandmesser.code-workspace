@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "Sender_Sensor"
+			"path": "Receiver_Display"
 		},
 		{
-			"path": "Receiver_Display"
+			"path": "Sender_Sensor"
 		}
 	]
 }
