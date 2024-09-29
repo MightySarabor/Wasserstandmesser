@@ -67,37 +67,37 @@ Mit den Anforderungen im Hinterkopf habe ich die benötigten Teile gekauft. Eine
 ### Lötarbeiten:
 Als erstes habe ich das Display und das dazugelieferte Interface zusammengelötet. Das war das erste Mal, dass ich etwas zusammengelötet habe. Wichtig ist hier, dass man die Pins nicht miteinander verbindet. Leider ist das keine gute Methode, um beim Löten Zeit zu sparen, wie ich am Anfang dachte – es entsteht ein Kurzschluss.
 
-> [ ] **TODO**: Füge detaillierte Lötanleitungen oder Links zu Tutorials für Anfänger hinzu.
+![2ee921cd-962c-41db-8a32-675963d8e4d1](https://github.com/user-attachments/assets/3331cd9d-84c1-4eb7-94a6-7dd5d7e49625)
 
-### Entwicklungsumgebung:
-Mit der Extension PlatformIO IDE habe ich dann ein neues Projekt gestartet.
+Zusätzlich habe ich einen 300 kΩ Widerstand an die R19 Pins meines AJ-SR04M Sensors gelötet. Der AJ-SR04M verfügt über fünf verschiedene Modi, die über diese Pins und einen passenden Widerstand gesteuert werden können. Mit dem 300 kΩ Widerstand schalte ich den Sensor in den Energiesparmodus, wodurch er zwischen den Messungen deutlich weniger Strom verbraucht.
 
-<img src="https://github.com/user-attachments/assets/5212c9b2-bfbe-4dda-b172-903561b6971d" width="300"/>  
-
-Wie im Screenshot habe ich die folgenden Einstellungen gewählt:
-
-> [ ] **TODO**: Erkläre die genauen Einstellungen in der Entwicklungsumgebung (z.B. Board, Baudrate, Bibliotheken).
+Ein wichtiger Punkt ist, dass in diesem Modus das Trigger-Signal nicht nur 10 Mikrosekunden lang sein sollte, sondern mindestens 1 Millisekunde dauern muss, um eine Messung auszulösen.
 
 ### Verkabelung:
 Dann habe ich die Komponenten erstellt. Sensor und Display müssen wie folgt verkabelt werden:
-
-> [ ] **TODO**: Füge eine detaillierte Anleitung zur Verkabelung des ESP32-Boards hinzu (inkl. Pinbelegung).
 
 #### Der Sensor:
 - **Verkabelung**:  
   ![Sensor Verkabelung](image_link)
   
-  Der Sensor wird wie folgt angeschlossen:
-Nachdem der Sensor angeschlossen ist, ist er auch schon betriebsbereit. Im Standardmodus braucht der Sensor einen Trigger um dann das Echosignal zu senden. Anschließend sendet der Sensor die zurückgelegte Distanz des Signals in ms zurück. Anhand der ms kann man dann mit folgender Formel die zurückgelegten cm berechnen und damit die Distanz.
+Der Sensor wird wie folgt angeschlossen:
+Nachdem der Sensor angeschlossen ist, ist er auch schon betriebsbereit. Im Standardmodus braucht der Sensor einen Trigger um dann das Echosignal zu senden. Anschließend sendet der Sensor die zurückgelegte Distanz des Signals in ms zurück. 
+
+| **AJ-SR04M** | **ESP32 Pin**  | **Beschreibung**                                                      |
+|--------------------|----------------|------------------------------------------------------------------------|
+| VCC                | 5V             | Stromversorgung für den Sensor                                         |
+| GND                | GND            | Masseverbindung                                                       |
+| TRIG               | GPIO 5         | Trigger-Pin des Sensors (zum Senden eines Ultraschallimpulses)         |
+| ECHO               | GPIO 18        | Echo-Pin des Sensors (zum Empfangen des reflektierten Signals)         |
+
+
+
 
 ```cpp
 // Berechne die Entfernung basierend auf der Zeit (Schallgeschwindigkeit = 0,034 cm/µs)
 float distance = (duration * 0.034) / 2;
 ```
 Neben dem Standardmodus gibt es noch 4 weitere Modi, diese werden via Widerständen über R19 eingestellt. Um eine möglichst viel Energie zu sparen, können wir den Sensor in den Energiesparmodus bringen. So geht er zwischen den Messungen in einen Standbymodus wodurch er weniger Energie verbraucht.
-
-
-
 
   > [ ] **TODO**: Beschreibe die Anschlüsse des Sensors im Detail und erkläre, wie der Sensor funktioniert.
 
@@ -121,6 +121,13 @@ Neben dem Standardmodus gibt es noch 4 weitere Modi, diese werden via Widerstän
 ## Methodenvalidierung
 
 > [ ] **TODO**: Beschreibe, wie du die Funktionsweise des Sensors und der Anzeige überprüft und validiert hast (z.B. Testläufe, Fehlertests).
+
+### Entwicklungsumgebung:
+Mit der Extension PlatformIO IDE habe ich dann ein neues Projekt gestartet.
+
+<img src="https://github.com/user-attachments/assets/5212c9b2-bfbe-4dda-b172-903561b6971d" width="300"/>  
+
+Wie im Screenshot habe ich die folgenden Einstellungen gewählt. Es muss für jedes Board ein eigenes Projekt angelegt werden. Das sind bei mir die Projekte Sender_Sensor und Receiver_Display.
 
 ## Code
 
