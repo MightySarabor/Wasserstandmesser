@@ -74,40 +74,36 @@ Zusätzlich habe ich einen 300 kΩ Widerstand an die R19 Pins meines AJ-SR04M Se
 Ein wichtiger Punkt ist, dass in diesem Modus das Trigger-Signal nicht nur 10 Mikrosekunden lang sein sollte, sondern mindestens 1 Millisekunde dauern muss, um eine Messung auszulösen.
 
 ### Verkabelung:
-Dann habe ich die Komponenten erstellt. Sensor und Display müssen wie folgt verkabelt werden:
+Dann habe ich die Komponenten erstellt. Sensor und Display müssen wie in den Tabellen beschrieben verkabelt werden. Danach sind die Geräte direkt betriebsbereit.
 
 #### Der Sensor:
 - **Verkabelung**:  
-  ![Sensor Verkabelung](image_link)
   
-Der Sensor wird wie folgt angeschlossen:
-Nachdem der Sensor angeschlossen ist, ist er auch schon betriebsbereit. Im Standardmodus braucht der Sensor einen Trigger um dann das Echosignal zu senden. Anschließend sendet der Sensor die zurückgelegte Distanz des Signals in ms zurück. 
+| **AJ-SR04M** | **ESP32 Pin**  | 
+|--------------------|----------------|
+| VCC                | 5V             |
+| GND                | GND            | 
+| TRIG               | GPIO 5         |    
+| ECHO               | GPIO 18        | 
 
-| **AJ-SR04M** | **ESP32 Pin**  | **Beschreibung**                                                      |
-|--------------------|----------------|------------------------------------------------------------------------|
-| VCC                | 5V             | Stromversorgung für den Sensor                                         |
-| GND                | GND            | Masseverbindung                                                       |
-| TRIG               | GPIO 5         | Trigger-Pin des Sensors (zum Senden eines Ultraschallimpulses)         |
-| ECHO               | GPIO 18        | Echo-Pin des Sensors (zum Empfangen des reflektierten Signals)         |
-
-
-
-
-```cpp
-// Berechne die Entfernung basierend auf der Zeit (Schallgeschwindigkeit = 0,034 cm/µs)
-float distance = (duration * 0.034) / 2;
-```
-Neben dem Standardmodus gibt es noch 4 weitere Modi, diese werden via Widerständen über R19 eingestellt. Um eine möglichst viel Energie zu sparen, können wir den Sensor in den Energiesparmodus bringen. So geht er zwischen den Messungen in einen Standbymodus wodurch er weniger Energie verbraucht.
-
-  > [ ] **TODO**: Beschreibe die Anschlüsse des Sensors im Detail und erkläre, wie der Sensor funktioniert.
+<img src="https://github.com/user-attachments/assets/162fb203-1b52-4b58-a295-8b85bc301caf" width="300"/>
 
 #### Das Display:
 - **Verkabelung**:  
-  ![Display Verkabelung](image_link)
+Das Display wird wie folgt angeschlossen:
 
-  Das Display wird wie folgt angeschlossen:
+  ### Verbindungen des I2C-LCD-Displays mit dem ESP32
 
-> [ ] **TODO**: Erkläre, wie das I2C-Protokoll funktioniert und wie es mit dem ESP32 verbunden wird.
+Ein Hinweis bei dem Display: Es gibt eine Stellschraube beim Displayinterface. Damit kann der Kontrast eingestellt werden. Hier einfach ausprobieren, was am besten aussieht.
+
+| LCD-Pin | ESP32-Pin |
+|---------|-----------|
+| VCC     | 5V        |
+| GND     | GND       |
+| SDA     | 21        |
+| SCL     | 22        |
+
+<img src="https://github.com/user-attachments/assets/1f8e870f-86c3-4933-90d6-19265de6d720" width="200"/>
 
 ### Endmontage:
 - **Zisterne**:  
