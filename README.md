@@ -86,7 +86,17 @@ Dann habe ich die Komponenten erstellt. Sensor und Display müssen wie folgt ver
   ![Sensor Verkabelung](image_link)
   
   Der Sensor wird wie folgt angeschlossen:
-  
+Nachdem der Sensor angeschlossen ist, ist er auch schon betriebsbereit. Im Standardmodus braucht der Sensor einen Trigger um dann das Echosignal zu senden. Anschließend sendet der Sensor die zurückgelegte Distanz des Signals in ms zurück. Anhand der ms kann man dann mit folgender Formel die zurückgelegten cm berechnen und damit die Distanz.
+
+```cpp
+// Berechne die Entfernung basierend auf der Zeit (Schallgeschwindigkeit = 0,034 cm/µs)
+float distance = (duration * 0.034) / 2;
+```
+Neben dem Standardmodus gibt es noch 4 weitere Modi, diese werden via Widerständen über R19 eingestellt. Um eine möglichst viel Energie zu sparen, können wir den Sensor in den Energiesparmodus bringen. So geht er zwischen den Messungen in einen Standbymodus wodurch er weniger Energie verbraucht.
+
+
+
+
   > [ ] **TODO**: Beschreibe die Anschlüsse des Sensors im Detail und erkläre, wie der Sensor funktioniert.
 
 #### Das Display:
