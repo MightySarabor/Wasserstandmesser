@@ -4,7 +4,7 @@
 
 Das Ziel dieses Projekts war es, einen **Wasserstandsmesser** für die Zisterne meiner Eltern zu entwickeln. Bisher mussten wir den Wasserstand manuell mit einem Zollstock messen – ein umständlicher und zeitaufwändiger Prozess. Mit diesem Projekt soll der Vorgang stark vereinfacht werden, sodass wir den Wasserstand zukünftig bequem von einem Display ablesen können.
 
-Die ersten Kapitel sollen helfen das Projekt nachzubauen. Nach der Projektbeschreibung werde ich auf Besonderheiten des Codes und interessante technische Daten eingehen.
+Die ersten Kapitel sollen helfen, das Projekt nachzubauen. Nach der Projektbeschreibung werde ich auf Besonderheiten des Codes und interessante technische Daten eingehen.
 
 ### Anforderungen an das Projekt:
 1. **Komfort**:  
@@ -28,27 +28,27 @@ Mit dieser Lösung gehört das manuelle Messen des Wasserstandes der Vergangenhe
 ## Components and Supplies
 
 - **esp32 WROOM32** (x2)  
-  <img src="https://m.media-amazon.com/images/I/71BY6XjW4yL._AC_SL1500_.jpg" width="200" />  
+  <img src="https://m.media-amazon.com/images/I/71BY6XjW4yL._AC_SL1500_.jpg" width="30%" />  
   [ESP32 WROOM32 kaufen](https://www.amazon.de/esp32-wroom/s?k=esp32+wroom)
 
 - **AJ-SR04M** (x1)  
-  <img src="https://m.media-amazon.com/images/I/51GyoUWmp5S._AC_.jpg" width="200" />  
+  <img src="https://m.media-amazon.com/images/I/51GyoUWmp5S._AC_.jpg" width="30%" />  
   [AJ-SR04M kaufen](https://www.amazon.de/s?k=AJ-SR04M)
 
 - **16x2 LCD Display with I2C Module** (x1)  
-  <img src="https://m.media-amazon.com/images/I/71Kz+RabPiL._SL1500_.jpg" width="200" />  
+  <img src="https://m.media-amazon.com/images/I/71Kz+RabPiL._SL1500_.jpg" width="30%" />  
   [16x2 LCD kaufen](https://www.amazon.de/s?k=lcd+display+i2c+16x2&__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1Z7IE0Y3NA9SM&sprefix=lcd+display+i2c+16x2%2Caps%2C84&ref=nb_sb_noss_2)
 
 - **Jumper Kabel** (x1)  
-  <img src="https://m.media-amazon.com/images/I/81ZY657A7XL._SL1500_.jpg" width="200" />  
+  <img src="https://m.media-amazon.com/images/I/81ZY657A7XL._SL1500_.jpg" width="30%" />  
   [Jumper Kabel kaufen](https://www.amazon.de/s?k=jumper+cable+female+female&crid=RU460WHOU1RY&sprefix=jumper+cable+femal%2Caps%2C90&ref=nb_sb_ss_pltr-data-refreshed_1_18)
 
 ## Apps and Platforms
 
-- **Visual Studio Code 2024** (x1)  
+- **Visual Studio Code 2024**  
   [Download Visual Studio Code 2024](https://code.visualstudio.com/)
 
-- **PlatformIO** (x1)  
+- **PlatformIO**  
   [Download PlatformIO](https://platformio.org/)
 
 ## Tools and Machines
@@ -67,7 +67,7 @@ Mit den Anforderungen im Hinterkopf habe ich die benötigten Teile gekauft. Eine
 ### Lötarbeiten
 Als erstes habe ich das Display und das dazugelieferte Interface zusammengelötet. Das war das erste Mal, dass ich etwas zusammengelötet habe. Wichtig ist hier, dass man die Pins nicht miteinander verbindet. Leider ist das keine gute Methode, um beim Löten Zeit zu sparen, wie ich am Anfang dachte – es entsteht ein Kurzschluss.
 
-![2ee921cd-962c-41db-8a32-675963d8e4d1](https://github.com/user-attachments/assets/3331cd9d-84c1-4eb7-94a6-7dd5d7e49625)
+<img src="https://github.com/user-attachments/assets/3331cd9d-84c1-4eb7-94a6-7dd5d7e49625" width="30%" />
 
 Zusätzlich habe ich einen 300 kΩ Widerstand an die R19 Pins meines AJ-SR04M Sensors gelötet. Der AJ-SR04M verfügt über fünf verschiedene Modi, die über diese Pins und einen passenden Widerstand gesteuert werden können. Mit dem 300 kΩ Widerstand schalte ich den Sensor in den Energiesparmodus, wodurch er zwischen den Messungen deutlich weniger Strom verbraucht.
 
@@ -79,15 +79,14 @@ Dann habe ich die Komponenten erstellt. Sensor und Display müssen wie in den Ta
 #### Der Sensor
 Der Sensor wird wie folgt angeschlossen:
 
-  
 | **AJ-SR04M** | **ESP32 Pin**  | 
-|--------------------|----------------|
-| VCC                | 5V             |
-| GND                | GND            | 
-| TRIG               | GPIO 5         |    
-| ECHO               | GPIO 18        | 
+|--------------|----------------|
+| VCC          | 5V             |
+| GND          | GND            | 
+| TRIG         | GPIO 5         |    
+| ECHO         | GPIO 18        | 
 
-<img src="https://github.com/user-attachments/assets/162fb203-1b52-4b58-a295-8b85bc301caf" width="300"/>
+<img src="https://github.com/user-attachments/assets/162fb203-1b52-4b58-a295-8b85bc301caf" width="30%" />
 
 #### Das Display
 
@@ -102,21 +101,63 @@ Ein Hinweis bei dem Display: Es gibt eine Stellschraube beim Displayinterface. D
 | SDA     | 21        |
 | SCL     | 22        |
 
-<img src="https://github.com/user-attachments/assets/1f8e870f-86c3-4933-90d6-19265de6d720" width="200"/>
+<img src="https://github.com/user-attachments/assets/1f8e870f-86c3-4933-90d6-19265de6d720" width="30%" />
 
 ### Entwicklungsumgebung und Code:
 
-Zum Entwickeln habe ich Visualstudio Codes mit der Extension PlatformIO IDE benutzt. Mit der Extension einfach den Code vom Repository clonen und die Projekte jeweils auf die Boards spielen.
+Zum Entwickeln habe ich Visual Studio Code mit der Extension PlatformIO IDE benutzt. Mit der Extension einfach den Code vom Repository clonen und die Projekte jeweils auf die Boards spielen.
 Wichtig: Ich habe beide Projekte in einem Workspace und es wird immer nur das obere Projekt hochgeladen. Nachdem ich ein Projekt hochgeladen habe, habe ich es von dem Workspace entfernt und dann das andere hochgeladen.
 
 Wenn der Code auf die Boards geladen wurde, können die Boards an eine beliebige Stromquelle angeschlossen werden und laufen direkt von alleine. Das Display vor dem Sensor anschließen, weil der Sensor nur alle 24 Stunden Daten liefert. 
 
+Um das Projekt selbst umzusetzen, müssen ein paar Anpassungen im Code gemacht werden, um den Code an die eigene Umgebung anzupassen. 
+
+#### Beim Receiver_Display:
+
+LCD Display Adresse:  
+Zeile im Code: `LiquidCrystal_I2C lcd(0x27, 16, 2);`  
+Beschreibung: I2C-Adresse und Größe des LCD-Displays anpassen.
+
+maxSensorDistance:  
+Abstand des Sensors von der maximalen Füllhöhe (in cm).  
+Zeile im Code: `const float maxSensorDistance = 60;`
+
+maxWaterHeight:  
+Maximale Wasserhöhe im Tank (in cm).  
+Zeile im Code: `const float maxWaterHeight = 200;`
+
+tankDiameter:  
+Durchmesser des Tanks (in cm).  
+Zeile im Code: `const float tankDiameter = 200;`
+
+Timeout für Sensorprüfung:  
+Zeile im Code: `const unsigned long timeout = 172800000;`  
+Beschreibung: Zeit in Millisekunden, nach der "Sensor checken!" angezeigt wird (2 Tage).
+
+Bildschirmwechsel-Intervall:  
+Zeile im Code: `const unsigned long switchInterval = 30000;`  
+Beschreibung: Zeitintervall in Millisekunden für Displaywechsel (30 Sekunden).
+
+#### Beim Sender_Sensor:
+
+receiverAddress:  
+Zeile im Code: `uint8_t receiverAddress[] = {0xAC, 0x15, 0x18, 0xEA, 0x9E, 0x08};`  
+Beschreibung: Dies ist die MAC-Adresse des Empfängers. Die MAC-Adresse des Empfänger-ESP32 muss angepasst werden.
+
+maxAttempts:  
+Zeile im Code: `const int maxAttempts = 3;`  
+Beschreibung: Maximale Anzahl der Sendeversuche, bevor der ESP32 in den Deep-Sleep geht. Dies kann erhöht oder verringert werden, je nachdem, wie oft der Nutzer eine erneute Übertragung versuchen möchte.
+
+Deep-Sleep Dauer:  
+Zeile im Code: `esp_sleep_enable_timer_wakeup(86400000000);`  
+Beschreibung: Zeit, die der ESP32 im Deep-Sleep bleibt (hier 24 Stunden in Mikrosekunden). Kann angepasst werden, um die Dauer des Schlafs zu verändern.
+
 ### Endmontage:
 - **Zisterne**:  
-  ![Bild der Installation in der Zisterne](image_link)
+  <img src="image_link" width="30%" />
 
 - **Küchentisch**:  
-  ![Bild der Installation auf dem Küchentisch](image_link)
+  <img src="image_link" width="30%" />
 
 > [ ] **TODO**: Füge Bilder der fertigen Installation in der Zisterne und auf dem Küchentisch hinzu.
 
@@ -127,7 +168,3 @@ Wenn der Code auf die Boards geladen wurde, können die Boards an eine beliebige
 ## Code
 
 Da der Code selbst im Repository zu finden ist, werde ich auf die Besonderheiten des Codes eingehen. Zu den Standardfunktionen findet man viel im Internet oder kann sich auch von einer KI, wie chatGPT helfen lassen.
-
-
-
-
