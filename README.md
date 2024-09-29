@@ -11,9 +11,9 @@ Die ersten Kapitel sollen helfen, das Projekt nachzubauen. Nach der Projektbesch
    Das Display soll sich nicht am Sensor selbst befinden, da wir ansonsten weiterhin fast den gesamten bisherigen Prozess durchlaufen müssten. Stattdessen wird es an einem Ort aufgestellt, der im Alltag leicht zugänglich ist, wie z.B. auf dem Küchentisch.
 
 2. **Zuverlässigkeit**:  
-   Die Messungen müssen zuverlässig sein, da wir sonst weiterhin den Wasserstand manuell prüfen müssten – was den Vorteil des Projekts zunichtemachen würde.
+   Die Messungen müssen zuverlässig sein, da wir sonst weiterhin den Wasserstand manuell prüfen müssten – was den Vorteil des Projekts zunichtemachen würde. Hierbei anzumerken, dass eine hohe Präzision nicht von Nöten ist. Ich habe mich als Product Owner intensiv mit meinen Stakeholdern (meinen Eltern) beraten und ihre Anforderungen waren: "Ich möchte wissen, ob ich die Blumen gießen kann." Für die Lesbarkeit werden Nachkommastellen deswegen ausgelassen.
 
-3. **Wartungsarm**:  
+4. **Wartungsarm**:  
    Der Wasserstandsmesser sollte über längere Zeiträume hinweg ohne Eingriff funktionieren. Es soll also keine neue, regelmäßige Arbeit entstehen, wie z.B. häufige Wartung oder Kalibrierung.
 
 ### Technische Umsetzung:
@@ -168,3 +168,48 @@ Beschreibung: Zeit, die der ESP32 im Deep-Sleep bleibt (hier 24 Stunden in Mikro
 ## Code
 
 Da der Code selbst im Repository zu finden ist, werde ich auf die Besonderheiten des Codes eingehen. Zu den Standardfunktionen findet man viel im Internet oder kann sich auch von einer KI, wie chatGPT helfen lassen.
+
+Sender_Sensor:
+
+Im Sensor habe ich absichtlich nur die Distanz gemessen. So bleibt der Sensor anwendungsagnostisch und ist nur für das Messen zuständig. Außerdem kann der Sensor im Garten bleiben, auch wenn ich beim Display andere Werte anzeigen möchte, oder das Display mal austasche. Die Transformationen der Daten finden im Receiver_Display statt. 
+Besonderheiten beim Sensor ist der Deep_Sleep Modus. Normalerweise besteht ein Arduino Code aus setup und loop. Wird der Deep_Sleep angewendet, startet sich der Microcontroller in vordefinierten Abständen immer wieder an uns aus. Daher wird nur der setup Teil benötigt. Zum loop kommt es nicht.
+
+Die Berechnung von ms in Distanz:
+```cp
+// Entfernungsmessung mit HC-SR04
+float getDistance() {
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(TRIG_PIN, LOW);
+  long duration = pulseIn(ECHO_PIN, HIGH);
+  return (duration * 0.034) / 2;
+}
+```
+
+Receiver_Display:
+
+Hier werden die Daten transformiert und angezeigt. Die Daten erhält das Receiver_Display in cm. Daraus kann ich mir alle nötigen Messwerte errechnen.
+
+Berechnung von Distanz zum Volumen:
+```cpp
+// Berechne das Wasservolumen in Litern
+float calculateVolume(float distance) {
+  float waterHeight = maxWaterHeight - (distance - maxSensorDistance);
+  float radius = tankDiameter / 2;
+  float volume = 3.14159 * (radius * radius) * waterHeight;  // Volumen in Kubikzentimetern
+  return volume / 1000;  // Konvertiere in Liter
+}
+```
+Berechnung von Distanz zu Prozentfüllmenge:
+```cpp
+// Berechne die Füllhöhe in Prozent
+float calculateFillPercentage(float distance) {
+  float waterHeight = maxWaterHeight - (distance - maxSensorDistance);
+  return (waterHeight / maxWaterHeight) * 100;
+}
+```
+
+
+
