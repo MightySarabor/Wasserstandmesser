@@ -118,35 +118,17 @@ Ein Hinweis bei dem Display: Es gibt eine Stellschraube beim Displayinterface. D
 
 > [ ] **TODO**: Beschreibe, wie du die Funktionsweise des Sensors und der Anzeige überprüft und validiert hast (z.B. Testläufe, Fehlertests).
 
-### Entwicklungsumgebung:
-Mit der Extension PlatformIO IDE habe ich dann ein neues Projekt gestartet.
+## Entwicklungsumgebung und Code:
 
-<img src="https://github.com/user-attachments/assets/5212c9b2-bfbe-4dda-b172-903561b6971d" width="300"/>  
+Zum Entwickeln habe ich Visualstudio Codes mit der Extension PlatformIO IDE benutzt. Mit der Extension einfach den Code vom Repository clonen und die Projekte jeweils auf die Boards spielen.
+Wichtig: Ich habe beide Projekte in einem Workspace und es wird immer nur das obere Projekt hochgeladen. Nachdem ich ein Projekt hochgeladen habe, habe ich es von dem Workspace entfernt und dann das andere hochgeladen.
 
-Wie im Screenshot habe ich die folgenden Einstellungen gewählt. Es muss für jedes Board ein eigenes Projekt angelegt werden. Das sind bei mir die Projekte Sender_Sensor und Receiver_Display.
+Wenn der Code auf die Boards geladen wurde, können die Boards an eine beliebige Stromquelle angeschlossen werden und laufen direkt von alleine. Das Display vor dem Sensor anschließen, weil der Sensor nur alle 24 Stunden Daten liefert. 
 
-## Code
+### Code
 
-```cpp
-// Beispielcode
-void setup() {
-  // Setup-Funktion
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-
-void loop() {
-  // Loop-Funktion
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
-}
+Da der Code selbst im Repository zu finden ist, werde ich auf die Besonderheiten des Codes eingehen. Zu den Standardfunktionen findet man viel im Internet oder kann sich auch von einer KI, wie chatGPT helfen lassen.
 
 
-### Zusätzliche TODOs:
-1. **Füge mehr Erklärungen** zur Funktionsweise der einzelnen Komponenten (Sensor, Display, ESP32) hinzu.
-2. **Verkabelungsdiagramme**: Ein Fritzing-Diagramm für die Verkabelung kann hilfreich sein.
-3. **Bibliotheken und Abhängigkeiten**: Liste alle notwendigen Arduino/PlatformIO-Bibliotheken auf, die du für das Projekt benötigt hast.
-4. **Testberichte und Ergebnisse**: Füge einen Abschnitt hinzu, in dem du Testläufe und Ergebnisse dokumentierst.
 
-Mit diesen TODOs hast du eine klare Übersicht über die noch anstehenden Aufgaben, um die README zu vervollständigen.
+
