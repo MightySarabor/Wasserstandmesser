@@ -169,14 +169,14 @@ Um den Sensor in der Zisterne zu installieren, habe ich die Komponenten in wasse
 
 Das Kabel des Sensors musste ich dann noch in der Zisterne befestigen. Dazu habe ich alte Aluschalen meiner Mutter verwendet. Ich habe die Wände der Schalen entfernt, ein Kreuz in den Boden geschnitten und den Sensor hindurchgeführt. Zur zusätzlichen Fixierung habe ich den Sensor mit einem Kabelbinder gesichert. Die Enden der Schalen habe ich einfach um die Gitterstangen gewickelt, um den Sensor stabil zu befestigen.
 
-In einer Ecke der Zisterne habe ich außerdem einen Korken angebracht, um sicherzustellen, dass kein Druck auf das Kabel ausgeübt wird.
-  <img src="https://github.com/user-attachments/assets/b49df7d2-764e-4bb3-8485-7e0c6e30b2ce" width="45%" />
-  <img src="https://github.com/user-attachments/assets/8bf5ccc8-c24a-4959-afcd-62962e585665" width="45%" />
-  <img src="https://github.com/user-attachments/assets/083203ef-f0f0-4674-9472-077183bd864c" width="45%" />
+In einer Ecke der Zisterne habe ich außerdem einen Korken angebracht, um sicherzustellen, dass kein Druck auf das Kabel ausgeübt wird.  
 
 
-  <img src="https://github.com/user-attachments/assets/793cec12-c066-46a8-b230-9a566d998c38" width="45%" />
-  <img src="https://github.com/user-attachments/assets/d894f8ab-c48c-4000-9642-30413c631689" width="45%" />
+  <img src="https://github.com/user-attachments/assets/b49df7d2-764e-4bb3-8485-7e0c6e30b2ce" width="40%" />
+  <img src="https://github.com/user-attachments/assets/8bf5ccc8-c24a-4959-afcd-62962e585665" width="40%" />
+  <img src="https://github.com/user-attachments/assets/083203ef-f0f0-4674-9472-077183bd864c" width="40%" />
+  <img src="https://github.com/user-attachments/assets/793cec12-c066-46a8-b230-9a566d998c38" width="40%" />
+  <img src="https://github.com/user-attachments/assets/d894f8ab-c48c-4000-9642-30413c631689" width="40%" />
 
 **Display**:  
 Das Display steht bei uns in der Küche. Von dort aus kann man auf einen Blick sehen, wie viel Wasser noch in der Zisterne ist. Die Displays alternieren alle 30 Sekunden zwischen den Anzeigen.
