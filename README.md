@@ -277,7 +277,7 @@ Insgesamt bin ich mit dem Projekt sehr zufrieden. Auf dem Weg zum Ergebnis habe 
 
 Nicht nur konnte ich viel lernen, sondern meine Familie hat jetzt einen funktionsfähigen Sensor und kann sich den Weg zur Zisterne sparen. In meinen Augen war das Projekt ein voller Erfolg. 
 
-Das Projekt bietet eine solide Grundlage, um erste Erfahrungen mit Arduino oder ähnlichen Mikrocontrollern zu sammeln. Deswegen habe ich mich dazu entschieden, das erste Mal ein Repository auf Public zu stellen und so zu schreiben, dass man das Projekt nachbauen kann. Vielleicht hilft es irgendwann jemandem.
+Das Projekt bietet eine solide Grundlage, um erste Erfahrungen mit Arduino oder ähnlichen Mikrocontrollern zu sammeln. Deswegen habe ich mich dazu entschieden, das Repository so zu schreiben, dass man das Projekt nachbauen kann. Vielleicht hilft es irgendwann jemandem.
 
 
 
