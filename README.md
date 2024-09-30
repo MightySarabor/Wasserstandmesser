@@ -116,7 +116,7 @@ Ein Hinweis bei dem Display: Es gibt eine Stellschraube beim Displayinterface. D
 Zum Entwickeln habe ich Visual Studio Code mit der Extension PlatformIO IDE benutzt. Mit der Extension einfach den Code vom Repository clonen und die Projekte jeweils auf die Boards spielen.
 Wichtig: Ich habe beide Projekte in einem Workspace und es wird immer nur das obere Projekt hochgeladen. Nachdem ich ein Projekt hochgeladen habe, habe ich es von dem Workspace entfernt und dann das andere hochgeladen.
 
-Wenn der Code auf die Boards geladen wurde, können die Boards an eine beliebige Stromquelle angeschlossen werden und laufen direkt von alleine. Das Display vor dem Sensor anschließen, weil der Sensor nur alle 24 Stunden Daten liefert. 
+Wenn der Code auf die Boards geladen wurde, können die Boards an eine beliebige Stromquelle angeschlossen werden und laufen direkt von alleine. Das Display vor dem Sensor anschließen, weil der Sensor nur alle 24 Stunden Daten liefert. Alternativ kann auch der "EN" Knopf auf dem Sensor Board gedrückt werden, dadurch startet das Board neu und führt eine Messung durch.
 
 Um das Projekt selbst umzusetzen, müssen ein paar Anpassungen im Code gemacht werden, um den Code an die eigene Umgebung anzupassen. 
 
