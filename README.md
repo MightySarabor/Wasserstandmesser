@@ -164,7 +164,7 @@ Beschreibung: Zeit, die der ESP32 im Deep-Sleep bleibt (hier 24 Stunden in Mikro
 ### Endmontage:
 **Sensor**:
 
-Den Sensor habe ich an die Batterien angeschlossen und das Battery Case so eingestellt (schwarzer Schalter nach rechts), dass es sich bei einem zu geringen Stromverbrauch nicht abschaltet. 
+Den Sensor habe ich an die Batterien angeschlossen und das Battery Case so eingestellt (schwarzer Schalter nach links), dass es sich bei einem zu geringen Stromverbrauch nicht abschaltet. 
 
 Um den Sensor in der Zisterne zu installieren, habe ich die Komponenten in wasserfesten Tüten verstaut und vorsichtig Löcher für die Kabel hineingeschnitten. Anschließend habe ich alles in den Igel eingesetzt. Dafür musste ich das Loch mit einer Zange etwas vergrößern. Es war zwar immer noch etwas knifflig, aber letztendlich hat alles gut hineingepasst.
 
