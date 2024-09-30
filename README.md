@@ -1,4 +1,5 @@
-# Arduino Project: Dein Projekttitel
+# Wasserstandmesser
+![79a155ad-12d9-4e02-822c-800c66a2a6cd](https://github.com/user-attachments/assets/041e201e-4ee6-431d-b606-613bfed471a3)
 
 ## Intro
 
@@ -270,5 +271,14 @@ void displayCheckSensor() {
   lcd.print("Sensor checken!    ");
 }
 ```
+
+## Fazit und Rückblick
+
+Insgesamt bin ich mit dem Projekt sehr zufrieden. Auf dem Weg zum Ergebnis habe ich über einige Umwege viel gelernt. Ich habe mich ins Löten eingearbeitet, Spannungsverteiler gebaut und gelernt, wie man ein Multimeter benutzt. Auch wenn dieses Wissen für das Endprodukt letztlich nicht notwendig war, bin ich froh, dass ich mich in diese Themen eingearbeitet habe.
+
+Nicht nur konnte ich viel lernen, sondern meine Familie hat jetzt einen funktionsfähigen Sensor und kann sich den Weg zur Zisterne sparen. In meinen Augen war das Projekt ein voller Erfolg. 
+
+Das Projekt bietet eine solide Grundlage, um erste Erfahrungen mit Arduino oder ähnlichen Mikrocontrollern zu sammeln. Deswegen habe ich mich dazu entschieden, das erste Mal ein Repository auf Public zu stellen und so zu schreiben, dass man das Projekt nachbauen kann. Vielleicht hilft es irgendwann jemandem.
+
 
 
