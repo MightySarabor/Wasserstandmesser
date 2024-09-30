@@ -5,7 +5,7 @@
 
 Das Ziel dieses Projekts war es, einen **Wasserstandsmesser** für die Zisterne meiner Eltern zu entwickeln. Bisher mussten wir den Wasserstand manuell mit einem Zollstock messen – ein umständlicher und zeitaufwändiger Prozess. Mit diesem Projekt soll der Vorgang stark vereinfacht werden, sodass wir den Wasserstand zukünftig bequem von einem Display ablesen können.
 
-Die ersten Kapitel sollen helfen, das Projekt nachzubauen. Nach der Projektbeschreibung werde ich auf Besonderheiten des Codes und interessante technische Daten eingehen.
+Die ersten Kapitel sollen helfen, das Projekt nachzubauen. Nach der Projektbeschreibung werde ich auf Besonderheiten des Codes eingehen.
 
 ### Anforderungen an das Projekt:
 1. **Komfort**:  
