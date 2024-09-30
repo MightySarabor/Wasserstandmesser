@@ -52,7 +52,7 @@ Mit dieser Lösung gehört das manuelle Messen des Wasserstandes der Vergangenhe
    <img src="https://m.media-amazon.com/images/I/71JoUBYpiVL._AC_SL1500_.jpg" width="30%" />  
   [Battery Case kaufen](https://www.amazon.de/3-7V-3000mAh-Wiederaufladbarer-POWO18B-Batterieschutzbox/dp/B0BXX48HGJ/ref=sr_1_8?crid=20J1LZ0593G0E&dib=eyJ2IjoiMSJ9.8e6AUuhxKBmqsrxFXm4OLodJ5kUI6XiP4FvdPq9jEQg06k-YFEeU0-1Ta2qnIGHWhFZ3kZXBdZZ5Aph1pk7cCZnzOP99-AD1Euy7G3xsn4MP8Q4vuqBfkFjI-hCXT3E1-PrLrPqjcmW11Bhocb3CpjuAq4znsrXfMQUPmIHHAZkoGdj1F7Ny8_5FxAC6VyQNkXozuMiyL88gD69ADGFZRI40pWJ-VA3d1Q7vUNf9LUs.EEeRHcoqJGsQyjAaJKqJSY2acxDUhkUKenHapwV1F7A&dib_tag=se&keywords=wiederaufladbare+batterien+3%2C7v&qid=1727710268&sprefix=wideraufladbare+batterien+3%2Caps%2C102&sr=8-8)
 
-**Widerstände mit insgesamt 300 KiloOhm**
+- **Widerstände mit insgesamt 300 KiloOhm**
 
 ## Programmierumgebung
 
