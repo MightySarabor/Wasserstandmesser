@@ -153,17 +153,27 @@ Zeile im Code: `esp_sleep_enable_timer_wakeup(86400000000);`
 Beschreibung: Zeit, die der ESP32 im Deep-Sleep bleibt (hier 24 Stunden in Mikrosekunden). Kann angepasst werden, um die Dauer des Schlafs zu verändern.
 
 ### Endmontage:
-- **Zisterne**:  
-  <img src="image_link" width="30%" />
+**Zisterne**:
 
-- **Küchentisch**:  
-  <img src="image_link" width="30%" />
+Um den Sensor in der Zisterne zu installieren, habe ich die Komponenten in wasserfesten Tüten verstaut und vorsichtig Löcher für die Kabel hineingeschnitten. Anschließend habe ich alles in den Igel eingesetzt. Dafür musste ich das Loch mit einer Zange etwas vergrößern. Es war zwar immer noch etwas knifflig, aber letztendlich hat alles gut hineingepasst.
 
-> [ ] **TODO**: Füge Bilder der fertigen Installation in der Zisterne und auf dem Küchentisch hinzu.
+Das Kabel des Sensors musste ich dann noch in der Zisterne befestigen. Dazu habe ich alte Aluschalen meiner Mutter verwendet. Ich habe die Wände der Schalen entfernt, ein Kreuz in den Boden geschnitten und den Sensor hindurchgeführt. Zur zusätzlichen Fixierung habe ich den Sensor mit einem Kabelbinder gesichert. Die Enden der Schalen habe ich einfach um die Gitterstangen gewickelt, um den Sensor stabil zu befestigen.
 
-## Methodenvalidierung
+In einer Ecke der Zisterne habe ich außerdem einen Korken angebracht, um sicherzustellen, dass kein Druck auf das Kabel ausgeübt wird.
+  <img src="https://github.com/user-attachments/assets/b49df7d2-764e-4bb3-8485-7e0c6e30b2ce" width="45%" />
+  <img src="https://github.com/user-attachments/assets/8bf5ccc8-c24a-4959-afcd-62962e585665" width="45%" />
+  <img src="https://github.com/user-attachments/assets/083203ef-f0f0-4674-9472-077183bd864c" width="45%" />
 
-> [ ] **TODO**: Beschreibe, wie du die Funktionsweise des Sensors und der Anzeige überprüft und validiert hast (z.B. Testläufe, Fehlertests).
+
+  <img src="https://github.com/user-attachments/assets/793cec12-c066-46a8-b230-9a566d998c38" width="45%" />
+  <img src="https://github.com/user-attachments/assets/d894f8ab-c48c-4000-9642-30413c631689" width="45%" />
+
+**Display**:  
+Das Display steht bei uns in der Küche. Von dort aus kann man auf einen Blick sehen, wie viel Wasser noch in der Zisterne ist. Die Displays alternieren alle 30 Sekunden zwischen den Anzeigen.
+
+  <img src="https://github.com/user-attachments/assets/22f39efa-2636-467a-9cfb-8cd956662c4d" width="30%" />
+  <img src="https://github.com/user-attachments/assets/a76ce32d-dec5-4c4a-9738-4d91f1c7b0f6" width="30%" />
+  <img src="https://github.com/user-attachments/assets/7dee42c7-fa07-4301-93bc-b8c8290c6ae2" width="30%" />
 
 ## Code
 
