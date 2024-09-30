@@ -208,7 +208,7 @@ float getDistance() {
 }
 ```
 
-Außerdem läuft der ESP32 im Deep_Sleep Modus. Normalerweise besteht ein Arduino Code aus setup und loop. Wird der Deep_Sleep angewendet, startet sich der Microcontroller in vordefinierten Abständen immer wieder an uns aus. Daher wird nur der setup Teil benötigt. Ich habe aber zusätzlich eingebaut, dass mein Sensor mehrmals versucht Daten zu senden, um die Chance, dass eine Messung verloren geht zu reduzieren. In dem Codeabschnitt wird im Loop geprüft ob die Daten angekommen sind oder die maximale Anzahl der Versuche erreicht wurde. Danach wird der ESP für einen Tag lang in den Deep_Sleep versetzt.
+Außerdem läuft der ESP32 im Deep_Sleep Modus. Normalerweise besteht ein Arduino Code aus setup und loop. Wird der Deep_Sleep angewendet, startet sich der Microcontroller in vordefinierten Abständen immer wieder an uns aus. Daher wird eigentlich nur der setup Teil benötigt. Ich habe aber zusätzlich eingebaut, dass mein Sensor mehrmals versucht Daten zu senden, um die Chance, dass eine Messung verloren geht zu reduzieren, deswegen benutze ich trotzdem noch den Loop. Da prüfr ich, ob die Daten angekommen sind oder die maximale Anzahl der Versuche erreicht wurde. Danach wird der ESP für einen Tag lang in den Deep_Sleep versetzt.
 
 ```cpp
 void loop() {
